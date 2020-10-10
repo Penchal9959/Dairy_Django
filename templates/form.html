@@ -1,0 +1,54 @@
+{% extends 'base.html' %} 
+{% block body %}
+
+ <form method="POST" action="/logout/">
+ 	{% csrf_token %}
+ 	<!-- <input type="submit"  value="logout"> -->
+ 	<button type="log out"  style="
+    margin-left: 1100px;
+    margin-right: 0px;
+    margin-top: 100px;
+    width: 150px;background-color: #4CAF50; color: white; cursor: pointer;  padding: 10px 30px; font-size: 16px; border: none;">Log out</button>
+ </form>
+
+ {% load static %} 
+
+<link rel="stylesheet" href="{% static 'image.css' %}"> 
+<body id="bg" style="display: inline-block; background-image: url('{% static "images/img.jpg" %}'); "></body>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta
+      charset="UTF-8"
+      name="viewport"
+      content="width=device-width, initial-scale=1"/>
+      <!-- <link rel="stylesheet" href="{% static 'static/image.css' %}">  -->
+  </head>
+  
+  <body>
+
+    <center><form method='POST'style=" 
+    margin-left: 550px;
+    margin-right: 800px;
+    margin-top: 100px;
+    width: 0px;">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <!-- <textarea id="text" name="text" rows="20" cols="100"> -->
+
+    <button type="submit"  style="
+    margin-left: 130px;
+    margin-right: 400px;
+    margin-top: 30px;
+    width: 100px;background-color: #4CAF50; color: white; cursor: pointer;  padding: 10px 20px; font-size: 16px; border: none;">Submit</button></center>
+      </form>
+     
+  </body>
+</html>
+<!-- <form>
+{% csrf_token %}
+
+{{ form.as_p }}
+</form> -->
+
+{% endblock %}

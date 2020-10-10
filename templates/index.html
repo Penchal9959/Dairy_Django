@@ -1,0 +1,75 @@
+
+
+
+{% extends 'base.html' %} {% block body %}
+
+{% load static %}
+
+<link rel="stylesheet" href="{% static 'image.css' %}"> 
+<body id="bg" style="display: inline-block; background-image: url('{% static "images/img.jpg" %}'); "></body>
+
+<h1 style="
+    margin-left: 620px;
+    margin-right: 200px;
+    margin-top: 200px;
+    width: 400px;
+    color:white;">Secret Dairy</h1>
+<h3 style="
+    margin-left: 540px;
+    margin-right: 200px;
+    margin-top: 30px;
+    width: 400px;
+    color:white;">Store your thoughts permanently and securely</h3>
+<h3 style="
+    margin-left: 610px;
+    margin-right: 200px;
+    margin-top: 30px;
+    width: 400px;
+    color:white;">Interested? Sign up now.</h3>
+
+
+
+
+<form method="POST">
+  {% csrf_token %}
+  <div style="
+    margin-left: 410px;
+    margin-right: 200px;
+    margin-top: 30px;
+    width: 600px;">
+  <center><div class="col-md-8">
+    <div class="form-group">
+      <label for="username"></label>
+      <input
+        type="text"
+        name="username"
+        class="form-control"
+        required="required"
+        placeholder="your Email"
+      />
+    </div>
+    <div class="form-group" style="margin-top: 15px;">
+      <label for="password"></label>
+      <input
+        type="password"
+        name="password"
+        class="form-control"
+        required="required"
+        placeholder="password"
+      />
+    </div>
+    <br/>
+   
+
+    <div class="form-group" >
+      <button type="submit" class="btn btn-primary form-control" style="background-color: #4CAF50; color: white; cursor: pointer;  padding: 10px 32px; font-size: 16px; border: none;">
+        <span class="glyphicon glyphicon-save"></span> Sign Up!
+      </button>
+    </div>
+    <div class="col-md-2" style="margin-top: 20px; font-size: 16px;">
+    <a href="/login" style="text-decoration: none; color: yellow; font-size: 20px" >Log in</a>
+  </div>
+  </div></center>
+</div>
+</form>
+{% endblock %}
